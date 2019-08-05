@@ -6,7 +6,6 @@ object SimpleApp {
     val conf = new SparkConf().setAppName("SimpleApp").setMaster("spark://master1.0phsxb3scd5ezokhxq2qtfyv5e.syx.internal.cloudapp.net:7077")
     val sc = new SparkContext(conf)
     // val spark = SparkSession.builder.appName("SimpleApp").getOrCreate()
- //   val filePath = "D:\\README.md"
     val filePath ="/home/minji/spark-2.2.0-bin-hadoop2.7/README.md"
     val inputRDD = sc.textFile(filePath)
     val numAs = inputRDD.filter(line => line.contains("a")).count()
